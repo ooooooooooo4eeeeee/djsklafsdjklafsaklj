@@ -3,111 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的個人首頁</title>
+    <title>個人介紹｜科技風</title>
+
     <style>
-        * {
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            background: #0d0f1b;
+            color: #e4e6eb;
+            overflow-x: hidden;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+                radial-gradient(circle at 20% 30%, rgba(0,140,255,0.15), transparent 70%),
+                radial-gradient(circle at 80% 70%, rgba(255,0,140,0.12), transparent 60%);
+            background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
         }
 
-        body, html {
-            height: 100%;
-            font-family: "Microsoft JhengHei", sans-serif;
-            color: white;
-            overflow: hidden;
+        .container {
+            width: 85%;
+            max-width: 1100px;
+            margin: 60px auto;
         }
 
-        /* 背景圖全螢幕 */
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            background: url('myphoto.jpg') center center/cover no-repeat;
+        .profile-card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(15px);
+            border-radius: 18px;
+            padding: 35px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
+            gap: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
         }
 
-        /* 半透明遮罩（讓文字更清晰） */
-        .hero::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
-            z-index: 1;
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(0,200,255,0.5);
+            box-shadow: 0 0 25px rgba(0,200,255,0.35);
         }
 
-        .content {
-            position: relative;
-            z-index: 2;
+        .hello-title {
+            font-size: 34px;
+            margin: 0;
+            background: linear-gradient(90deg, #00eaff, #ff56ff);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 700;
         }
 
-        h1 {
-            font-size: 5em;
-            font-weight: 900;
-            letter-spacing: 5px;
-        }
-
-        p {
+        .description {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #d6d8dd;
             margin-top: 10px;
-            font-size: 1.2em;
         }
 
-        /* 作品連結區 */
-        .works {
-            position: absolute;
-            bottom: 40px;
-            z-index: 2;
+        .work-section {
+            margin-top: 70px;
             text-align: center;
         }
 
-        .works a {
-            display: inline-block;
-            margin: 0 15px;
-            color: white;
-            font-size: 1.1em;
+        .work-title {
+            font-size: 30px;
+            margin-bottom: 35px;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #00eaff, #ff56ff);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .btn {
+            padding: 14px 35px;
+            border-radius: 10px;
             text-decoration: none;
-            border: 1px solid white;
-            padding: 8px 16px;
-            border-radius: 5px;
-            transition: 0.3s;
+            font-size: 18px;
+            font-weight: 600;
+            border: 2px solid #00eaff;
+            color: #00eaff;
+            transition: 0.25s;
+            box-shadow: 0 0 10px rgba(0,234,255,0.4);
         }
 
-        .works a:hover {
-            background-color: white;
-            color: black;
+        .btn:hover {
+            background-color: #00eaff;
+            color: #0d0f1b;
+            box-shadow: 0 0 25px rgba(0,234,255,0.9);
+            transform: translateY(-3px);
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 3em;
-            }
-            .works a {
-                display: block;
-                margin: 10px auto;
-                width: 60%;
-            }
+        .work-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
         }
+
+        .links-section {
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .link-box {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 20px;
+            border-radius: 14px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        iframe {
+            width: 100%;
+            height: 260px;
+            border-radius: 10px;
+        }
+
+        .ext-link {
+            display: block;
+            margin-top: 12px;
+            color: #00eaff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
     </style>
 </head>
+
 <body>
-    <div class="hero">
-        <div class="content">
-            <h1>我的名字</h1>
-            <p>關於美學、創作與生活的故事</p>
+
+    <div class="container">
+
+        <div class="profile-card">
+            <img src="me.jpg" alt="個人照片" class="profile-img">
+
+            <div>
+                <h1 class="hello-title">Hello~</h1>
+                <p class="description">
+                    我對電子與電路設計、嵌入式系統、AIoT 與通訊技術有高度興趣，
+                    目前正朝東海大學電機工程學系為目標努力準備。希望未來能在電機領域累積扎實的工程能力，
+                    參與更多創新專題，例如智慧裝置開發、感測系統整合與自動化應用，並持續在科技的世界中探索成長。
+                </p>
+            </div>
         </div>
 
-        <div class="works">
-            <a href="work1.pdf" target="_blank">作品一</a>
-            <a href="work2.pdf" target="_blank">作品二</a>
-            <a href="work3.pdf" target="_blank">作品三</a>
+        <div class="links-section">
+            <div class="link-box">
+                <h3>東海電機相關影片</h3>
+                <!-- 四個影片（可替換成您偏好的影片 ID） -->
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                    <iframe src="https://www.youtube.com/embed/l5cx49nSZYA" allowfullscreen style="height:120px;"></iframe>
+                    <iframe src="https://www.youtube.com/embed/xP8-XXvhIIs" allowfullscreen style="height:120px;"></iframe>
+                    <iframe src="https://www.youtube.com/embed/uIxAtkYWN8Y" allowfullscreen style="height:120px;"></iframe>
+                    <iframe src="https://www.youtube.com/embed/6oQjQptEERs" allowfullscreen style="height:120px;"></iframe>
+                </div>
+                <a class="ext-link" href="https://www.youtube.com/%40thuee6057" target="_blank">更多影片：東海電機官方頻道</a>
+            </div>
+
+            <div class="link-box">
+                <h3>與東海電機相關的官方網站</h3>
+                <a class="ext-link" href="https://ee.thu.edu.tw/" target="_blank">系所官網 - 東海大學電機工程學系</a>
+                <a class="ext-link" href="https://eng.thu.edu.tw/" target="_blank">工學院首頁 - College of Engineering</a>
+                <a class="ext-link" href="https://recruit.thu.edu.tw/" target="_blank">招生資訊 - 東海大學招生管道總覽</a>
+                <a class="ext-link" href="https://www.thu.edu.tw/" target="_blank">東海大學校首頁</a>
+            </div>
         </div>
+<div class="link-box">
+                <h3>東海大學電機系官網</h3>
+                <a class="ext-link" href="https://ee.thu.edu.tw/" target="_blank">前往電機系網站</a>
+            </div>
+        </div>
+
+        <div class="work-section">
+            <h2 class="work-title">我的作品</h2>
+
+            <div class="work-buttons">
+                <a class="btn" href="work1.pdf" target="_blank">作品 1</a>
+                <a class="btn" href="work2.pdf" target="_blank">作品 2</a>
+                <a class="btn" href="work3.pdf" target="_blank">作品 3</a>
+            </div>
+        </div>
+
     </div>
+
 </body>
 </html>
